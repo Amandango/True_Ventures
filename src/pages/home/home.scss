@@ -1,3 +1,186 @@
 page-home {
 
+    @keyframes animatedBackground {
+        from { background-position: 0 0; }
+        to { background-position: 100% 0; }
+    }
+
+    @keyframes animatedText {
+        from {opacity: 0}
+        to { opacity: 1}
+    }
+
+    @keyframes slideUp {
+        1% {
+            opacity: 1;
+        }
+        100% {
+          top: 0;
+          opacity: 1;
+        }
+    }
+
+    @keyframes appear{
+        from{opacity: 0}
+        to{opacity: 1}
+    }
+
+    @keyframes type{ 
+        0% { width: 0; opacity: 0;} 
+        1% {opacity: 1}
+        100% {width: 100%; opacity: 1}
+      } 
+    
+      @keyframes moves{ 
+        0% {opacity: 1;}
+        100% {opacity: 0;}
+      } 
+
+      @keyframes zooms{
+        from{transform: scale(1)}
+        to{transform: scale(60)}
+    }
+
+    @keyframes bounce {
+        from { transform: translate3d(0, 0, 0);}
+        to   { transform: translate3d(0, -150px, 0); }
+      }
+
+    @keyframes ballMove {
+        to {left: 50%;}
+    }
+
+    .still-area {
+        background-color: #8EC1DA;
+        height: 60%;
+        width: 100%;
+    }
+
+    .slider {
+        background-color: white;
+        position: absolute;
+        opacity: 0;
+        top: 100%;
+        height: 100%;
+        width: 100%;
+        z-index: 2;
+        animation: slideUp;
+        animation-duration: 2s;
+        animation-delay: 16s;
+        animation-fill-mode: forwards;
+    }
+
+    .parent {
+        text-align: center;
+        width: 100%;
+    }
+
+    .animate-area	{ 
+        width: 100%; 
+        height: 40%; 
+        position: fixed;
+        bottom: 0%;
+        background-image: url("../assets/imgs/bg-clouds.png");
+        background-position: 0px 0px;
+        background-repeat: repeat-x;
+        background-size: cover;
+    
+        animation-name: animatedBackground, zooms;
+        animation-duration: 10s, 8s;
+        animation-delay: 0s, 10s;
+        animation-timing-function: linear, linear;
+        animation-fill-mode: none, forwards;
+    }
+
+    ion-grid {
+        display: inline-block;
+        width: 100%;
+    }
+
+    .parent {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+    #hey {
+        color: white; 
+        position: absolute;
+        opacity: 0;
+        font-family: "roboto";
+        font-size: 40px;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 30em;
+        animation-name: type, moves;
+        animation-delay: 2s, 4s;
+        animation-duration: 5s, 1s;
+        animation-fill-mode: forwards, forwards;
+        animation-timing-function: steps(80, end);
+    }
+
+    #name {
+        color: white; 
+        opacity: 0;
+        position: absolute;
+        font-family: "roboto";
+        font-size: 40px;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 30em;
+        animation-name: type, moves;
+        animation-delay: 6s, 8s;
+        animation-duration: 5s, 0.8s;
+        animation-fill-mode: forwards, forwards;
+        animation-timing-function: steps(80, end), linear;
+    }
+    
+    #explanation {
+        color: white; 
+        opacity: 0;
+        font-family: "roboto";
+        font-size: 40px;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 30em;
+        animation-name: type, moves;
+        animation-delay: 11s, 20s;
+        animation-duration: 6s, 0.8s;
+        animation-fill-mode: forwards, forwards;
+        animation-timing-function: steps(80, end), linear;
+    }
+
+      .ball {
+        background-image: url("../assets/imgs/trueventures.jpg");
+        background-size: cover;
+        position: fixed;
+        top: 20%;
+        left: -20%;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;         
+        animation: bounce, ballMove;
+        animation-duration: 0.5s, 3s;
+        animation-direction: alternate;
+        animation-delay: 10s, 10s;
+        animation-iteration-count: 6, 1;
+        animation-fill-mode: forwards, forwards;
+      }
+
+      #TV {
+        color: white;
+        opacity: 0;
+        font-family: "roboto";
+        font-size: 40px;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 30em;
+        animation-name: type;
+        animation-delay: 12s;
+        animation-duration: 4s;
+        animation-fill-mode: forwards;
+        animation-timing-function: steps(80, end);
+      }
+
 }
