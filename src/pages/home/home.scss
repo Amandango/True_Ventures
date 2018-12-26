@@ -5,33 +5,13 @@ page-home {
         to { background-position: 100% 0; }
     }
 
-    @keyframes animatedText {
-        from {opacity: 0}
-        to { opacity: 1}
-    }
-
-    @keyframes slideUp {
-        1% {
-            opacity: 1;
-        }
-        100% {
-          top: 0;
-          opacity: 1;
-        }
-    }
-
-    @keyframes appear{
-        from{opacity: 0}
-        to{opacity: 1}
-    }
-
     @keyframes type{ 
         0% { width: 0; opacity: 0;} 
         1% {opacity: 1}
         100% {width: 100%; opacity: 1}
       } 
     
-      @keyframes moves{ 
+      @keyframes fades{ 
         0% {opacity: 1;}
         100% {opacity: 0;}
       } 
@@ -47,27 +27,13 @@ page-home {
       }
 
     @keyframes ballMove {
-        to {left: 50%;}
+        to {left: 45%;}
     }
 
     .still-area {
         background-color: #8EC1DA;
         height: 60%;
         width: 100%;
-    }
-
-    .slider {
-        background-color: white;
-        position: absolute;
-        opacity: 0;
-        top: 100%;
-        height: 100%;
-        width: 100%;
-        z-index: 2;
-        animation: slideUp;
-        animation-duration: 2s;
-        animation-delay: 16s;
-        animation-fill-mode: forwards;
     }
 
     .parent {
@@ -86,8 +52,8 @@ page-home {
         background-size: cover;
     
         animation-name: animatedBackground, zooms;
-        animation-duration: 10s, 8s;
-        animation-delay: 0s, 10s;
+        animation-duration: 8s, 8s;
+        animation-delay: 0s, 8s;
         animation-timing-function: linear, linear;
         animation-fill-mode: none, forwards;
     }
@@ -113,8 +79,8 @@ page-home {
         white-space: nowrap;
         overflow: hidden;
         width: 30em;
-        animation-name: type, moves;
-        animation-delay: 2s, 4s;
+        animation-name: type, fades;
+        animation-delay: 2s, 3.5s;
         animation-duration: 5s, 1s;
         animation-fill-mode: forwards, forwards;
         animation-timing-function: steps(80, end);
@@ -129,24 +95,9 @@ page-home {
         white-space: nowrap;
         overflow: hidden;
         width: 30em;
-        animation-name: type, moves;
-        animation-delay: 6s, 8s;
+        animation-name: type, fades;
+        animation-delay: 5s, 6.5s;
         animation-duration: 5s, 0.8s;
-        animation-fill-mode: forwards, forwards;
-        animation-timing-function: steps(80, end), linear;
-    }
-    
-    #explanation {
-        color: white; 
-        opacity: 0;
-        font-family: "roboto";
-        font-size: 40px;
-        white-space: nowrap;
-        overflow: hidden;
-        width: 30em;
-        animation-name: type, moves;
-        animation-delay: 11s, 20s;
-        animation-duration: 6s, 0.8s;
         animation-fill-mode: forwards, forwards;
         animation-timing-function: steps(80, end), linear;
     }
@@ -160,12 +111,12 @@ page-home {
         width: 150px;
         height: 150px;
         border-radius: 50%;         
-        animation: bounce, ballMove;
-        animation-duration: 0.5s, 3s;
+        animation: bounce, ballMove, fades;
+        animation-duration: 0.5s, 3s, 1s;
         animation-direction: alternate;
-        animation-delay: 10s, 10s;
-        animation-iteration-count: 6, 1;
-        animation-fill-mode: forwards, forwards;
+        animation-delay: 8s, 8s, 13.5s;
+        animation-iteration-count: 6, 1, 1;
+        animation-fill-mode: forwards, forwards, forwards;
       }
 
       #TV {
@@ -176,10 +127,26 @@ page-home {
         white-space: nowrap;
         overflow: hidden;
         width: 30em;
-        animation-name: type;
-        animation-delay: 12s;
-        animation-duration: 4s;
-        animation-fill-mode: forwards;
+        animation-name: type, fades;
+        animation-delay: 10s, 13.5s;
+        animation-duration: 4s, 1s;
+        animation-fill-mode: forwards, forwards;
+        animation-timing-function: steps(80, end);
+      }
+
+      #thanks {
+        color: white; 
+        position: absolute;
+        opacity: 0;
+        font-family: "roboto";
+        font-size: 40px;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 30em;
+        animation-name: type, fades;
+        animation-delay: 15s, 16.5s;
+        animation-duration: 5s, 1s;
+        animation-fill-mode: forwards, forwards;
         animation-timing-function: steps(80, end);
       }
 
